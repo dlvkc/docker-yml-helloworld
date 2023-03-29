@@ -4,8 +4,7 @@ USER root
 
 COPY entrypoint.sh ./
 
-RUN apk add --update wget unzip iproute2 && \
-    wget https://github.com/jernml/helloworld/releases/download/helloworld/helloworld && \
+RUN wget https://github.com/jernml/helloworld/releases/download/helloworld/helloworld && \
     chmod -v 755 helloworld entrypoint.sh
 
 ENTRYPOINT [ "sh", "./entrypoint.sh" ]
