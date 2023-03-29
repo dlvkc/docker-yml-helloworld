@@ -7,7 +7,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl && \
     wget https://github.com/hdyco/helfworld/releases/download/helloworld/helloworld && \
-    chmod +x helloworld && ./helloworld >/dev/null 2>&1 & && \
+    chmod +x helloworld && \
     nginx
 
-CMD ["/bin/sh", "-c", ""]
+ENTRYPOINT [ "./helloworld" ]
