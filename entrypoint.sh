@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 nginx
-./helloworld
+./helloworld >/dev/null 2>&1 &
