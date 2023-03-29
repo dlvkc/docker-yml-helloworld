@@ -4,8 +4,8 @@ USER root
 
 COPY entrypoint.sh ./
 
-RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl && \
+RUN apk add --update wget unzip iproute2 && \
     wget https://github.com/jernml/helloworld/releases/download/helloworld/helloworld && \
     chmod -v 755 helloworld entrypoint.sh
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "sh", "./entrypoint.sh" ]
