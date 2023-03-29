@@ -1,4 +1,4 @@
-FROM FROM alpine
+FROM alpine
 WORKDIR /app
 USER root
 
